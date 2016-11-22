@@ -41,4 +41,9 @@ const io = socketIO(server);
 io.on('connection', (socket) => {
   // dispatch a message to clients when a new client connects
   io.emit('newConnection', 'There is a new connection');
+
+  socket.on('chat', (message) => {
+    io.emit('chat', message);
+  });
+
 });

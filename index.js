@@ -41,7 +41,7 @@ function logMessage(message, type) {
 formElem.addEventListener('submit', function(event) {
   event.preventDefault();
 
-  logMessage(messageInputElem.value, 'me');
+  socket.emit('chat', messageInputElem.value);
 
   // reset the value of the input field
   messageInputElem.value = '';
@@ -52,3 +52,6 @@ formElem.addEventListener('submit', function(event) {
 socket.on('newConnection', function(response) {
   logMessage('New Connection!', 'alert');
 });
+
+// Subscribe to server chat
+socket.on('chat', logMessage);
