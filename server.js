@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const socketIO = require('socket.io');
 
 /** @const server port */
 const port = 3000;
@@ -27,7 +28,17 @@ app.get('/index.js', (request, response) => {
 });
 
 
-app.listen(port, host, () => {
+/** @const open a connection */
+const server = app.listen(port, host, () => {
   console.log('Server started', `http://${host}:${port}`);
   console.log('Press Ctrl+C to exit...\n');
+});
+
+/** @const create a new io connection */
+const io = socketIO(server);
+
+// listen to new connections
+io.on('connection', (socket) => {
+  // dispatch a message to clients when a new client connects
+  io.emit('newConnection', 'There is a new connection');
 });
