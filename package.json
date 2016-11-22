@@ -1,0 +1,26 @@
+{
+  "name": "code-newbies-js-intro",
+  "version": "1.0.0",
+  "description": "Code newbies chat room app demo",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.14.0",
+    "socket.io": "^1.6.0"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/goldhand/code-newbies-js-intro.git"
+  },
+  "author": "Will Farley <wfarley@amazon.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/goldhand/code-newbies-js-intro/issues"
+  },
+  "homepage": "https://github.com/goldhand/code-newbies-js-intro#readme"
+}
